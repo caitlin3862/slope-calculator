@@ -8,6 +8,7 @@ public class LinearEquationLogic {
         linearEquation = null;
         scan = new Scanner(System.in);
     }
+    
     // starts the program
     public void start(){
         welcome();
@@ -21,16 +22,17 @@ public class LinearEquationLogic {
         // finds x1 and y1
         int comIdx = coord1.indexOf(",");
         int x1 = Integer.parseInt(coord1.substring(1,comIdx));
-        int y1 = Integer.parseInt(coord1.substring(comIdx+1,coord1.length()-1));
+        int y1 = Integer.parseInt(coord1.substring(comIdx+2,coord1.length()-1));
         System.out.print("Enter coordinate 2: ");
         String coord2 = scan.nextLine();
         // finds x2 and y2
         int comIdx2 = coord2.indexOf(",");
         int x2 = Integer.parseInt(coord2.substring(1,comIdx2));
-        int y2 = Integer.parseInt(coord2.substring(comIdx2+1,coord2.length()));
+        int y2 = Integer.parseInt(coord2.substring(comIdx2+2,coord2.length()-1));
         System.out.println();
 
         // initialize coordinates
         linearEquation = new LinearEquation(x1, x2, y1, y2);
+        System.out.println(linearEquation.lineInfo());
     }
 }
